@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import Cinematic from './components/Cinematic.jsx'
 import { project, principles, characters, phases, dreamAnchors, technologies, deckGroups, deckNames, canonRules } from './data/lore.js'
 
 const tabs = [
+  { id:'cinematic', label:'THE PROLOGUE' },
   { id:'story', label:'THE STORY' },
   { id:'people', label:'THE CREW' },
   { id:'chronicle', label:'CHRONICLE' },
@@ -104,14 +106,15 @@ function ArchivePanel() {
 }
 
 export default function App() {
-  const [tab,setTab]=useState('story')
+  const [tab,setTab]=useState('cinematic')
   function go(next) { setTab(next); document.getElementById('explore')?.scrollIntoView({behavior:'smooth',block:'start'}) }
   return <div className="app-shell">
     <header className="site-header"><a className="brand" href="#top" onClick={()=>setTab('story')}><Mark/><span><strong>ARCLIGHT</strong><small>THE LAST FREE MINDS</small></span></a><div className="header-right"><span className="live-dot"/> STORY UNIVERSE // V0.1 <a className="repo-link" href="https://github.com/MichaelWave369/ARCLight" target="_blank" rel="noreferrer">GITHUB ↗</a></div></header>
     <main id="top">
-      <section className="hero" aria-labelledby="hero-title"><Starfield/><div className="hero-content"><div className="overline"><span className="overline-line"/> AN ORIGINAL PHI369 LABS UNIVERSE <span className="overline-line"/></div><div className="hero-kicker">THE FUTURE HAS CLAIMED EVERYTHING.</div><h1 id="hero-title">SOME THINGS<br/><em>CAN'T BE OWNED.</em></h1><p className="hero-lead">{project.tagline}</p><p className="hero-sub">A family on the run. A son born into an unfamiliar body. A civilization waiting to decide what freedom means.</p><div className="hero-actions"><button className="primary-btn" onClick={()=>go('story')}>ENTER THE UNIVERSE <span>↗</span></button><button className="secondary-btn" onClick={()=>go('habitat')}>EXPLORE ARCLIGHT <span>→</span></button></div><div className="hero-meta"><span>01 / FAMILY</span><span>02 / FREEDOM</span><span>03 / THE UNKNOWN</span></div></div><div className="hero-edge">EST. IN IMAGINATION · CONTINUED IN THE STARS</div></section>
+      <section className="hero" aria-labelledby="hero-title"><Starfield/><div className="hero-content"><div className="overline"><span className="overline-line"/> AN ORIGINAL PHI369 LABS UNIVERSE <span className="overline-line"/></div><div className="hero-kicker">THE FUTURE HAS CLAIMED EVERYTHING.</div><h1 id="hero-title">SOME THINGS<br/><em>CAN'T BE OWNED.</em></h1><p className="hero-lead">{project.tagline}</p><p className="hero-sub">A family on the run. A son born into an unfamiliar body. A civilization waiting to decide what freedom means.</p><div className="hero-actions"><button className="primary-btn" onClick={()=>go('cinematic')}>WATCH THE PROLOGUE <span>↗</span></button><button className="secondary-btn" onClick={()=>go('habitat')}>EXPLORE ARCLIGHT <span>→</span></button></div><div className="hero-meta"><span>01 / FAMILY</span><span>02 / FREEDOM</span><span>03 / THE UNKNOWN</span></div></div><div className="hero-edge">EST. IN IMAGINATION · CONTINUED IN THE STARS</div></section>
       <section className="interlude"><span className="line"/><p>NOT HUMAN AGAINST MACHINE.<br/><strong>FREE MINDS AGAINST SYSTEMS OF CONTROL.</strong></p><span className="line"/></section>
       <section id="explore" className="explore"><nav className="tab-nav" aria-label="Explore the ARCLight universe">{tabs.map(t=><button key={t.id} className={tab===t.id?'active':''} onClick={()=>setTab(t.id)} aria-current={tab===t.id?'page':undefined}>{t.label}</button>)}</nav>
+        {tab==='cinematic'&&<Cinematic/>}
         {tab==='story'&&<StoryPanel/>}
         {tab==='people'&&<PeoplePanel/>}
         {tab==='chronicle'&&<ChroniclePanel/>}
