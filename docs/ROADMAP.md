@@ -7,7 +7,14 @@
 - [x] Responsive React lore portal with Story / Crew / Chronicle / 33 Decks / Archive
 - [x] GitHub Pages build/deploy workflow and basic lore tests
 
-## Rung 2 — The Living Bible
+## Rung 2A — Cinematic Visual Foundation
+- [x] Original source-editable vector designs for Ori, the Vitalizer, the Sentinel, and ARCLight
+- [x] Five-scene cinematic prologue and concept vault
+- [x] Opt-in playback, manual navigation, keyboard controls, reduced-motion mode
+- [x] Design language and continuity-aware art notes
+- [x] Scene data regression tests
+
+## Rung 2B — The Living Bible
 - [ ] Editable structured lore records with versioning / change history
 - [ ] Character relationship network and timeline cross-references
 - [ ] Distinguish core canon from speculation across every page

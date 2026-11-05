@@ -23,6 +23,16 @@ The question is not merely whether machines can think. It is **who gets to decid
 - **Mystery:** Unreliable records, identity continuity, the forbidden Deck 33, and the larger ARCLight myth.
 - **Horror:** The frightening unknown of consciousness and the universe, not a lazy claim that all AI is evil.
 
+## Rung 2A — Cinematic visual experience
+
+The [live portal](https://michaelwave369.github.io/ARCLight/) includes an opt-in five-scene animated prologue and an interactive visual concept vault: Ori's first flying vessel, the Vitalizer Chamber, a surveillance Sentinel and the 33-deck ARCLight habitat. All illustration work is original, source-editable SVG, not copied production stills or generated external dependencies.
+
+- [Visual identity and asset notes](docs/VISUAL_LANGUAGE.md)
+- [Cinematic scene metadata](src/data/scenes.js)
+- [Original source art](src/components/ConceptArt.jsx)
+
+The reel supports manual scene navigation, pause/play and reduced-motion preferences. Audio is deliberately not part of this rung.
+
 ## Status
 
 Creative development begins here. A companion interactive lore portal and detailed writing documents are being developed on a feature branch.
